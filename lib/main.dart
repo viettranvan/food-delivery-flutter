@@ -1,6 +1,7 @@
 import 'package:design_assets/utils/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:food_delivery/features/onboarding/onboarding_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,10 +17,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Sen',
         package: 'design_assets',
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+
+        /// Prevents to splash effect when clicking.
+        highlightColor: Colors.transparent,
+        splashColor: Colors.transparent,
+        scaffoldBackgroundColor: AppColors.colourWhite,
+        brightness: Brightness.light,
+
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const OnboardingPage(),
     );
   }
 }
