@@ -1,10 +1,13 @@
 # food_delivery
 
-A new Flutter project.
+Food Delivery App
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To generate assets path, run this command
+```bash
+dart run packages/design_assets/tools/generate_paths.dart
+```
 
 A few resources to get you started if this is your first Flutter project:
 
