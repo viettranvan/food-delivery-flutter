@@ -1,6 +1,8 @@
 import 'package:design_assets/utils/index.dart';
 import 'package:flutter/material.dart';
-import 'package:food_delivery/features/auth/presentation/pages/sign_in_page.dart';
+import 'package:food_delivery/generated/l10n.dart';
+import 'package:food_delivery/router/router.dart';
+import 'package:go_router/go_router.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -14,11 +16,34 @@ class _OnboardingPageState extends State<OnboardingPage>
     with SingleTickerProviderStateMixin {
   late PageController controller;
   int index = 0;
+  late final List<_DataSet> dataSet;
 
   @override
   void initState() {
     super.initState();
     controller = PageController();
+  }
+
+  @override
+  void didChangeDependencies() {
+    dataSet = [
+      _DataSet(
+        title: S.of(context).onboardingTitle1,
+        subtitle: S.of(context).onboardingSubTitle1,
+        imagePath: AssetsPath.chooseFood,
+      ),
+      _DataSet(
+        title: S.of(context).onboardingTitle2,
+        subtitle: S.of(context).onboardingSubTitle2,
+        imagePath: AssetsPath.prepareFood,
+      ),
+      _DataSet(
+        title: S.of(context).onboardingTitle3,
+        subtitle: S.of(context).onboardingSubTitle3,
+        imagePath: AssetsPath.deliveryFood,
+      ),
+    ];
+    super.didChangeDependencies();
   }
 
   @override
@@ -29,31 +54,11 @@ class _OnboardingPageState extends State<OnboardingPage>
 
   @override
   Widget build(BuildContext context) {
-    const dataSet = [
-      _DataSet(
-        title: 'All your favorites',
-        subtitle:
-            'Get all your loved foods in one once place, you just place the orer we do the rest',
-        imagePath: AssetsPath.chooseFood,
-      ),
-      _DataSet(
-        title: 'Order from choosen chef',
-        subtitle:
-            'Get all your loved foods in one once place, you just place the orer we do the rest',
-        imagePath: AssetsPath.prepareFood,
-      ),
-      _DataSet(
-        title: 'Free delivery offers',
-        subtitle:
-            'Get all your loved foods in one once place, you just place the orer we do the rest',
-        imagePath: AssetsPath.deliveryFood,
-      ),
-    ];
-
     return Scaffold(
       body: Column(
         children: [
           Expanded(
+            flex: 7,
             child: PageView.builder(
               controller: controller,
               itemCount: dataSet.length,
@@ -64,9 +69,11 @@ class _OnboardingPageState extends State<OnboardingPage>
                 final data = dataSet[index];
                 return Column(
                   children: [
-                    Image.asset(
-                      data.imagePath,
-                      fit: BoxFit.cover,
+                    Flexible(
+                      child: Image.asset(
+                        data.imagePath,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -92,76 +99,83 @@ class _OnboardingPageState extends State<OnboardingPage>
               },
             ),
           ),
-          Container(
-            width: double.infinity,
-            color: AppColors.colourWhite,
-            alignment: Alignment.center,
-            margin: const EdgeInsets.symmetric(vertical: 10),
-            child: SmoothPageIndicator(
-              count: dataSet.length,
-              controller: controller,
-              effect: const WormEffect(
-                type: WormType.thin,
-                activeDotColor: AppColors.primaryColor,
-                dotColor: Color(0xFFD9D9D9),
-                dotHeight: 10,
-                dotWidth: 10,
-                spacing: 12,
-              ),
-            ),
-          ),
-          InkWell(
-            onTap: () {
-              if (index < dataSet.length - 1) {
-                controller.nextPage(
-                  duration: const Duration(milliseconds: 300),
-                  curve: Curves.easeIn,
-                );
-              } else {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const SignInPage(),
-                  ),
-                );
-              }
-            },
-            child: Container(
-              height: 62,
-              margin: EdgeInsets.only(bottom: 16, left: 24, right: 24),
-              decoration: BoxDecoration(
-                color: AppColors.primaryColor,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Center(
-                child: Text(
-                  index == (dataSet.length - 1) ? "GET STARTED" : "NEXT",
-                  style: AppTextStyle.bold(
-                    size: 14,
-                    color: AppColors.colourWhite,
+          Expanded(
+            flex: 3,
+            child: Column(
+              children: [
+                const Spacer(flex: 1),
+                Container(
+                  width: double.infinity,
+                  color: AppColors.colourWhite,
+                  alignment: Alignment.center,
+                  margin: const EdgeInsets.symmetric(vertical: 10),
+                  child: SmoothPageIndicator(
+                    count: dataSet.length,
+                    controller: controller,
+                    effect: const WormEffect(
+                      type: WormType.thin,
+                      activeDotColor: AppColors.primaryColor,
+                      dotColor: Color(0xFFD9D9D9),
+                      dotHeight: 10,
+                      dotWidth: 10,
+                      spacing: 12,
+                    ),
                   ),
                 ),
-              ),
+                const Spacer(flex: 2),
+                InkWell(
+                  onTap: () {
+                    if (index < dataSet.length - 1) {
+                      controller.nextPage(
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeIn,
+                      );
+                    } else {
+                      context.replace(RouterName.signIn.path);
+                    }
+                  },
+                  child: Container(
+                    height: 62,
+                    margin: EdgeInsets.only(bottom: 16, left: 24, right: 24),
+                    decoration: BoxDecoration(
+                      color: AppColors.primaryColor,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Center(
+                      child: Text(
+                        (index == (dataSet.length - 1)
+                                ? S.of(context).getStarted
+                                : S.of(context).next)
+                            .toUpperCase(),
+                        style: AppTextStyle.bold(
+                          size: 14,
+                          color: AppColors.colourWhite,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    context.replace(RouterName.signIn.path);
+                  },
+                  child: Center(
+                    child: Text(
+                      index == (dataSet.length - 1) ? "" : S.of(context).skip,
+                      style: AppTextStyle.regular(
+                        size: 14,
+                        color: AppColors.primaryGrey,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                    height: MediaQuery.of(context).padding.bottom > 14
+                        ? MediaQuery.of(context).padding.bottom
+                        : 14),
+              ],
             ),
           ),
-          InkWell(
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const SignInPage(),
-                ),
-              );
-            },
-            child: Center(
-              child: Text(
-                index == (dataSet.length - 1) ? "" : "Skip",
-                style: AppTextStyle.regular(
-                  size: 14,
-                  color: AppColors.primaryGrey,
-                ),
-              ),
-            ),
-          ),
-          SizedBox(height: MediaQuery.of(context).padding.bottom),
         ],
       ),
     );

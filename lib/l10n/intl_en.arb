@@ -1,0 +1,72 @@
+{
+    "@@locale": "en",
+    "next": "Next",
+    "getStarted": "Get Started",
+    "skip": "Skip",
+    "onboardingTitle1": "All your favorites",
+    "onboardingTitle2": "Order from choosen chef",
+    "onboardingTitle3": "Free delivery offers",
+    "onboardingSubTitle1": "Get all your loved foods in one once place, you just place the order we do the rest",
+    "onboardingSubTitle2": "Pick your favorite chefs and enjoy meals made with care, just for you",
+    "onboardingSubTitle3": "Enjoy delicious dishes delivered to your door without extra cost",
+
+    "login": "Log In",
+    "loginSubtitle": "Please sign in to your existing account",
+    "email": "Email",
+    "emailHint": "example@gmail.com",
+    "password": "Password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot Password",
+    "forgotPasswordSubtitle": "Please sign in to your existing account",
+    "dontHaveAnAccount": "Don't have an account?",
+    "signUp": "Sign Up",
+    "signUpSubtitle": "Please sign up to get started",
+    "or": "Or",
+    "sendCode": "Send Code",
+    "verification": "Verification",
+    "verificationSubtitle": "We have sent a code to your email",
+    "resend": "Resend",
+    "inStr": "in",
+    "sec": "sec",
+    "verify": "Verify",
+    "name": "Name",
+    "nameHint": "Jon Doe",
+    "reTypePassword": "Re-type Password",
+    "accessLocation": "Access Location",
+    "accessLocationSubtitle": "{Appname} WILL ACCESS YOUR LOCATION ONLY WHILE USING THE APP",
+    "deliverTo": "Deliver to",
+    "goodMorning": "Good Morning",
+    "goodAfternoon": "Good Afternoon",
+    "goodEvening": "Good Evening",
+    "goodNight": "Good Night",
+    "heyName" : "Hey {name}",
+    "hintSearchDishRestaurant": "Search dishes, restaurants",
+    "allCategories": "All Categories",
+    "seeAll": "See All",
+    "starting": "Starting",
+    "openRestaurants": "Open Restaurants",
+    "free": "Free",
+    "hurryOffer": "Hurry Offers!",
+    "useCuponGetDiscount": "Use the cupon get {discount}% discount",
+    "@useCuponGetDiscount": {
+        "description": "Use the cupon get {discount}% discount",
+        "placeholders": {
+            "discount": {
+                "type": "num"
+            }
+        }
+    },
+    "gotIt": "Got it",
+    "recentKeyword": "Recent Keywords",
+    "search": "Search",
+    "popularFastFood": "Popular Fast Food",
+    "details": "Details",
+    "addToCart": "Add to Cart",
+    "size": "Size",
+    "ingredients": "Ingredients",
+    "filter": "Filter"
+    
+
+
+
+}
