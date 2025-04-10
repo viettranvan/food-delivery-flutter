@@ -2,6 +2,7 @@ part of 'router.dart';
 
 enum RouterName {
   home('/'),
+  onboarding('/onboarding'),
   signIn('/auth'),
   ;
 

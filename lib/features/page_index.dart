@@ -1,2 +1,2 @@
 export './auth/presentation/pages/index.dart';
-export './onboarding/onboarding_page.dart';
+export './onboarding/index.dart';

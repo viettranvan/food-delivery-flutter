@@ -35,11 +35,8 @@ class AssetsPath {
   static const String minus = '$_basePath/icons/minus.svg';
   static const String heart = '$_basePath/icons/heart.svg';
 
-  // === IMAGES PATH ===
+// === IMAGES PATH ===
   static const String deliveryFood = '$_basePath/images/delivery_food.jpg';
   static const String prepareFood = '$_basePath/images/prepare_food.jpg';
-  static const String image3 = '$_basePath/images/image-3.png';
-  static const String image2 = '$_basePath/images/image-2.png';
-  static const String image = '$_basePath/images/image.png';
   static const String chooseFood = '$_basePath/images/choose_food.jpg';
 }

@@ -10,7 +10,7 @@ void main() {
   final iconDir = Directory(iconsPath);
   final imageDir = Directory(imagePath);
   final buffer = StringBuffer(
-      'const _basePath = \'packages/design_assets/assets\';\n\n class AssetsPath {\n  // === ICONS PATH ===\n');
+      'const _basePath = \'packages/design_assets/assets\';\n\nclass AssetsPath {\n  // === ICONS PATH ===\n');
 
   if (!iconDir.existsSync() || !imageDir.existsSync()) {
     print('❌ Folder not found $iconsPath or $imagePath');
@@ -20,17 +20,19 @@ void main() {
   for (var file in iconDir.listSync()) {
     if (file is File) {
       final fileName = file.uri.pathSegments.last;
+      if (fileName == '.DS_Store') continue; // Skip .DS_Store file
       final name = fileName.split('.').first;
       buffer.writeln(
         "  static const String ${_toCamelCase(name)} = '\$_basePath/icons/$fileName';",
       );
     }
   }
-  buffer.writeln("\n  // === IMAGES PATH === ");
+  buffer.writeln("\n// === IMAGES PATH === ");
 
   for (var file in imageDir.listSync()) {
     if (file is File) {
       final fileName = file.uri.pathSegments.last;
+      if (fileName == '.DS_Store') continue; // Skip .DS_Store file
       final name = fileName.split('.').first;
       buffer.writeln(
         "  static const String ${_toCamelCase(name)} = '\$_basePath/images/$fileName';",

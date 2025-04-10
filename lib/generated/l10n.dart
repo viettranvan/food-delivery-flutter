@@ -370,13 +370,13 @@ class S {
     );
   }
 
-  /// `{Appname} WILL ACCESS YOUR LOCATION ONLY WHILE USING THE APP`
-  String accessLocationSubtitle(Object Appname) {
+  /// `{appName} WILL ACCESS YOUR LOCATION ONLY WHILE USING THE APP`
+  String accessLocationSubtitle(Object appName) {
     return Intl.message(
-      '$Appname WILL ACCESS YOUR LOCATION ONLY WHILE USING THE APP',
+      '$appName WILL ACCESS YOUR LOCATION ONLY WHILE USING THE APP',
       name: 'accessLocationSubtitle',
       desc: '',
-      args: [Appname],
+      args: [appName],
     );
   }
 

@@ -16,6 +16,10 @@ class _AppRouter {
     routes: [
       GoRoute(
         path: RouterName.home.path,
+        builder: (context, state) => const SpalshPage(),
+      ),
+      GoRoute(
+        path: RouterName.onboarding.path,
         builder: (context, state) => const OnboardingPage(),
       ),
       GoRoute(

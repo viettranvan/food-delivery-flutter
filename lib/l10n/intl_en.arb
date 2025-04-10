@@ -33,7 +33,7 @@
     "nameHint": "Jon Doe",
     "reTypePassword": "Re-type Password",
     "accessLocation": "Access Location",
-    "accessLocationSubtitle": "{Appname} WILL ACCESS YOUR LOCATION ONLY WHILE USING THE APP",
+    "accessLocationSubtitle": "{appName} WILL ACCESS YOUR LOCATION ONLY WHILE USING THE APP",
     "deliverTo": "Deliver to",
     "goodMorning": "Good Morning",
     "goodAfternoon": "Good Afternoon",

@@ -19,8 +19,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(Appname) =>
-      "${Appname} WILL ACCESS YOUR LOCATION ONLY WHILE USING THE APP";
+  static String m0(appName) =>
+      "${appName} WILL ACCESS YOUR LOCATION ONLY WHILE USING THE APP";
 
   static String m1(name) => "Hey ${name}";
 
