@@ -28,6 +28,24 @@ class _AppRouter {
           return SignInPage();
         },
       ),
+      GoRoute(
+        path: RouterName.signUp.path,
+        builder: (context, state) {
+          return SignUpPage();
+        },
+      ),
+      GoRoute(
+        path: RouterName.forgotPassword.path,
+        builder: (context, state) {
+          return ForgotPasswordPage();
+        },
+      ),
+      GoRoute(
+        path: RouterName.verification.path,
+        builder: (context, state) {
+          return VerificarionPage();
+        },
+      ),
     ],
     redirect: (context, state) async {
       return null;

@@ -79,6 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Open Restaurants"),
         "or": MessageLookupByLibrary.simpleMessage("Or"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "passwordHint": MessageLookupByLibrary.simpleMessage("**********"),
         "popularFastFood":
             MessageLookupByLibrary.simpleMessage("Popular Fast Food"),
         "reTypePassword":

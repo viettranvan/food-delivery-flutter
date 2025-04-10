@@ -2,8 +2,7 @@ import 'dart:math' as math;
 
 import 'package:design_assets/utils/index.dart';
 import 'package:flutter/material.dart';
-
-import 'index.dart';
+import 'package:food_delivery/common/index.dart';
 
 class TopFanShapeAnimation extends StatefulWidget {
   const TopFanShapeAnimation({super.key});

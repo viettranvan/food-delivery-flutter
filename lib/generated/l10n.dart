@@ -190,6 +190,16 @@ class S {
     );
   }
 
+  /// `**********`
+  String get passwordHint {
+    return Intl.message(
+      '**********',
+      name: 'passwordHint',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Remember me`
   String get rememberMe {
     return Intl.message(

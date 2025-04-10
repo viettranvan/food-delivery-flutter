@@ -15,6 +15,7 @@
     "email": "Email",
     "emailHint": "example@gmail.com",
     "password": "Password",
+    "passwordHint": "**********",
     "rememberMe": "Remember me",
     "forgotPassword": "Forgot Password",
     "forgotPasswordSubtitle": "Please sign in to your existing account",
