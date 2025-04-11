@@ -24,13 +24,15 @@ class TopFanShapeAnimationState extends State<TopFanShapeAnimation>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 2),
+      duration: const Duration(seconds: 2),
     );
 
-    _animation = Tween<double>(begin: 0, end: 1).animate(CurvedAnimation(
-      parent: _controller,
-      curve: Curves.easeOut,
-    ));
+    _animation = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Curves.easeOut,
+      ),
+    );
 
     _controller.forward();
   }
@@ -46,15 +48,15 @@ class TopFanShapeAnimationState extends State<TopFanShapeAnimation>
       animation: _animation,
       builder: (context, child) {
         // Góc xoay mục tiêu: 2π / số cánh
-        double targetAngle = (pi / 18 * 15 * index) / bladeCount;
-        double currentAngle = targetAngle * _animation.value + (pi / 2);
+        final targetAngle = (pi / 18 * 15 * index) / bladeCount;
+        final currentAngle = targetAngle * _animation.value + (pi / 2);
 
         return Transform.rotate(
           angle: currentAngle,
           child: Align(
             alignment: Alignment.topCenter,
             child: CustomPaint(
-              size: Size(10, 100), // chiều cao và vùng vẽ
+              size: const Size(10, 100), // chiều cao và vùng vẽ
               painter: BladePainter(
                 color: AppColors.primaryGrey.withValues(alpha: 0.1),
                 peakSize: 8,

@@ -16,7 +16,7 @@ class SsoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Spacer(),
+        const Spacer(),
         InkWell(
           onTap: fbCallback,
           child: Container(
@@ -27,17 +27,18 @@ class SsoWidget extends StatelessWidget {
               color: AppColors.colourBlue,
             ),
             child: Center(
-                child: Text(
-              "F",
-              style: AppTextStyle.of(
-                size: 30,
-                color: AppColors.colourWhite,
-                weight: AppFontWeight.bold,
+              child: Text(
+                'F',
+                style: AppTextStyle.of(
+                  size: 30,
+                  color: AppColors.colourWhite,
+                  weight: AppFontWeight.bold,
+                ),
               ),
-            )),
+            ),
           ),
         ),
-        SizedBox(width: 30),
+        const SizedBox(width: 30),
         InkWell(
           onTap: ggCallback,
           child: Container(
@@ -48,17 +49,18 @@ class SsoWidget extends StatelessWidget {
               color: AppColors.colourGreen,
             ),
             child: Center(
-                child: Text(
-              "G",
-              style: AppTextStyle.of(
-                size: 30,
-                color: AppColors.colourWhite,
-                weight: AppFontWeight.bold,
+              child: Text(
+                'G',
+                style: AppTextStyle.of(
+                  size: 30,
+                  color: AppColors.colourWhite,
+                  weight: AppFontWeight.bold,
+                ),
               ),
-            )),
+            ),
           ),
         ),
-        SizedBox(width: 30),
+        const SizedBox(width: 30),
         InkWell(
           onTap: appleCallback,
           child: Container(
@@ -69,17 +71,18 @@ class SsoWidget extends StatelessWidget {
               color: AppColors.primaryBlack,
             ),
             child: Center(
-                child: Text(
-              "A",
-              style: AppTextStyle.of(
-                size: 30,
-                color: AppColors.colourWhite,
-                weight: AppFontWeight.bold,
+              child: Text(
+                'A',
+                style: AppTextStyle.of(
+                  size: 30,
+                  color: AppColors.colourWhite,
+                  weight: AppFontWeight.bold,
+                ),
               ),
-            )),
+            ),
           ),
         ),
-        Spacer(),
+        const Spacer(),
       ],
     );
   }

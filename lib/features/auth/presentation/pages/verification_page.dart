@@ -18,7 +18,7 @@ class VerificarionPage extends StatefulWidget {
 }
 
 class _VerificarionPageState extends State<VerificarionPage> {
-  var focusNode = FocusNode();
+  FocusNode focusNode = FocusNode();
   final textEditingController = TextEditingController();
 
   late Timer _countdownTimer;
@@ -53,7 +53,7 @@ class _VerificarionPageState extends State<VerificarionPage> {
   }
 
   double calculateTextWidth(String text, TextStyle style) {
-    final TextPainter textPainter = TextPainter(
+    final textPainter = TextPainter(
       text: TextSpan(text: text, style: style),
       maxLines: 1,
       textDirection: TextDirection.ltr,
@@ -75,7 +75,6 @@ class _VerificarionPageState extends State<VerificarionPage> {
         color: AppColors.primaryMint,
         border: Border.all(
           color: validate ? AppColors.colourGrey : AppColors.colourRed,
-          width: 1,
         ),
       ),
       child: Center(
@@ -92,7 +91,7 @@ class _VerificarionPageState extends State<VerificarionPage> {
 
   @override
   Widget build(BuildContext context) {
-    final double textWidth = calculateTextWidth(
+    final textWidth = calculateTextWidth(
       S.of(context).resend,
       AppTextStyle.of(
         size: 14,
@@ -101,13 +100,13 @@ class _VerificarionPageState extends State<VerificarionPage> {
     );
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: Container(
+      body: ColoredBox(
         color: AppColors.primaryBlack,
         child: Stack(
           children: [
-            TopFanBlade(),
+            const TopFanBlade(),
             CustomPaint(
-              size: Size(200, 100), // Chiều ngang/dọc hình chữ Z
+              size: const Size(200, 100), // Chiều ngang/dọc hình chữ Z
               painter: DashedLinePainter(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height / 10 * 3,
@@ -142,7 +141,7 @@ class _VerificarionPageState extends State<VerificarionPage> {
                   flex: 3,
                   child: Column(
                     children: [
-                      Spacer(flex: 4),
+                      const Spacer(flex: 4),
                       Text(
                         S.of(context).verification,
                         style: AppTextStyle.of(
@@ -166,15 +165,15 @@ class _VerificarionPageState extends State<VerificarionPage> {
                           weight: AppFontWeight.bold,
                         ),
                       ),
-                      Spacer(flex: 1),
+                      const Spacer(),
                     ],
                   ),
                 ),
                 Expanded(
                   flex: 7,
                   child: Container(
-                    padding: EdgeInsets.all(24),
-                    decoration: BoxDecoration(
+                    padding: const EdgeInsets.all(24),
+                    decoration: const BoxDecoration(
                       color: AppColors.colourWhite,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(24),
@@ -190,7 +189,7 @@ class _VerificarionPageState extends State<VerificarionPage> {
                               S.of(context).code.toUpperCase(),
                               style: AppTextStyle.of(size: 13),
                             ),
-                            Spacer(),
+                            const Spacer(),
                             Stack(
                               alignment: Alignment.topLeft,
                               children: [
@@ -212,34 +211,36 @@ class _VerificarionPageState extends State<VerificarionPage> {
                               ],
                             ),
                             Text(
-                              " ${S.of(context).inStr}",
+                              ' ${S.of(context).inStr}',
                               style: AppTextStyle.of(size: 14),
                             ),
                             Text(
-                              " $_time",
+                              ' $_time',
                               style: AppTextStyle.of(size: 14),
                             ),
                             Text(
-                              " ${S.of(context).sec}",
+                              ' ${S.of(context).sec}',
                               style: AppTextStyle.of(size: 14),
                             ),
                           ],
                         ),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 8),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             ...List.generate(
-                                4,
-                                (index) => _renderOTPFiled(
-                                    place: index,
-                                    // validate: state.errorMessage.isEmpty,
-                                    initValue: textEditingController
-                                                .text.characters.length >
-                                            index
-                                        ? textEditingController.text.characters
-                                            .elementAt(index)
-                                        : '')),
+                              4,
+                              (index) => _renderOTPFiled(
+                                place: index,
+                                // validate: state.errorMessage.isEmpty,
+                                initValue: textEditingController
+                                            .text.characters.length >
+                                        index
+                                    ? textEditingController.text.characters
+                                        .elementAt(index)
+                                    : '',
+                              ),
+                            ),
                           ],
                         ),
                         Visibility(
@@ -250,7 +251,8 @@ class _VerificarionPageState extends State<VerificarionPage> {
                             focusNode: focusNode,
                             inputFormatters: <TextInputFormatter>[
                               FilteringTextInputFormatter.allow(
-                                  RegExp('[0-9]')),
+                                RegExp('[0-9]'),
+                              ),
                             ],
                             controller: textEditingController,
                             maxLength: 4,
@@ -262,7 +264,7 @@ class _VerificarionPageState extends State<VerificarionPage> {
                             },
                           ),
                         ),
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                         InkWell(
                           onTap: () {},
                           child: Container(
@@ -286,7 +288,7 @@ class _VerificarionPageState extends State<VerificarionPage> {
                       ],
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ],

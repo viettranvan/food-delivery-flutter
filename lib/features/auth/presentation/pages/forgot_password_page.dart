@@ -14,13 +14,13 @@ class ForgotPasswordPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: Container(
+      body: ColoredBox(
         color: AppColors.primaryBlack,
         child: Stack(
           children: [
-            TopFanBlade(),
+            const TopFanBlade(),
             CustomPaint(
-              size: Size(200, 100), // Chiều ngang/dọc hình chữ Z
+              size: const Size(200, 100), // Chiều ngang/dọc hình chữ Z
               painter: DashedLinePainter(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height / 10 * 3,
@@ -55,7 +55,7 @@ class ForgotPasswordPage extends StatelessWidget {
                   flex: 3,
                   child: Column(
                     children: [
-                      Spacer(flex: 2),
+                      const Spacer(flex: 2),
                       Text(
                         S.of(context).forgotPassword,
                         style: AppTextStyle.of(
@@ -71,15 +71,15 @@ class ForgotPasswordPage extends StatelessWidget {
                           color: AppColors.colourWhite,
                         ),
                       ),
-                      Spacer(flex: 1),
+                      const Spacer(),
                     ],
                   ),
                 ),
                 Expanded(
                   flex: 7,
                   child: Container(
-                    padding: EdgeInsets.all(24),
-                    decoration: BoxDecoration(
+                    padding: const EdgeInsets.all(24),
+                    decoration: const BoxDecoration(
                       color: AppColors.colourWhite,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(24),
@@ -93,18 +93,18 @@ class ForgotPasswordPage extends StatelessWidget {
                           S.of(context).email.toUpperCase(),
                           style: AppTextStyle.of(size: 13),
                         ),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 8),
                         AppTextfield(
                           hintText: S.of(context).emailHint,
                           autoFocus: true,
                           controller: TextEditingController(),
                         ),
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                         InkWell(
                           onTap: () {
                             context.push(
                               RouterName.verification.path,
-                              extra: "email@gmail.com",
+                              extra: 'email@gmail.com',
                             );
                           },
                           child: Container(
@@ -128,7 +128,7 @@ class ForgotPasswordPage extends StatelessWidget {
                       ],
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ],

@@ -24,13 +24,15 @@ class BottomFanShapeAnimationState extends State<BottomFanShapeAnimation>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 2),
+      duration: const Duration(seconds: 2),
     );
 
-    _animation = Tween<double>(begin: 0, end: 1).animate(CurvedAnimation(
-      parent: _controller,
-      curve: Curves.easeOut,
-    ));
+    _animation = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Curves.easeOut,
+      ),
+    );
 
     _controller.forward();
   }
@@ -46,8 +48,8 @@ class BottomFanShapeAnimationState extends State<BottomFanShapeAnimation>
       animation: _animation,
       builder: (context, child) {
         // Góc xoay mục tiêu: 2π / số cánh
-        double targetAngle = (pi / 18 * 10 * index) / bladeCount;
-        double currentAngle = targetAngle * _animation.value - (pi / 2);
+        final targetAngle = (pi / 18 * 10 * index) / bladeCount;
+        final currentAngle = targetAngle * _animation.value - (pi / 2);
         // (widget.isTop ? pi / 2 : (-pi / 2));
 
         return Transform.rotate(
@@ -55,7 +57,7 @@ class BottomFanShapeAnimationState extends State<BottomFanShapeAnimation>
           child: Align(
             alignment: Alignment.topCenter,
             child: CustomPaint(
-              size: Size(10, 150), // chiều cao và vùng vẽ
+              size: const Size(10, 150), // chiều cao và vùng vẽ
               painter: BladePainter(color: AppColors.primaryColor),
             ),
           ),

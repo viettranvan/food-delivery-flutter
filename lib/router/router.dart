@@ -25,25 +25,25 @@ class _AppRouter {
       GoRoute(
         path: RouterName.signIn.path,
         builder: (context, state) {
-          return SignInPage();
+          return const SignInPage();
         },
       ),
       GoRoute(
         path: RouterName.signUp.path,
         builder: (context, state) {
-          return SignUpPage();
+          return const SignUpPage();
         },
       ),
       GoRoute(
         path: RouterName.forgotPassword.path,
         builder: (context, state) {
-          return ForgotPasswordPage();
+          return const ForgotPasswordPage();
         },
       ),
       GoRoute(
         path: RouterName.verification.path,
         builder: (context, state) {
-          final email = state.extra as String;
+          final email = state.extra! as String;
           return VerificarionPage(email: email);
         },
       ),

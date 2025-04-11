@@ -50,12 +50,12 @@ class _RememberAndCheckboxState extends State<RememberAndCheckbox> {
                 : null,
           ),
         ),
-        SizedBox(width: 10),
+        const SizedBox(width: 10),
         Text(
           S.of(context).rememberMe,
           style: AppTextStyle.of(size: 13, color: AppColors.primaryGrey),
         ),
-        Spacer(),
+        const Spacer(),
         InkWell(
           onTap: () {
             widget.onForgotPassword.call();

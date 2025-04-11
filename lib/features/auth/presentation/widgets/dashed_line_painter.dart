@@ -36,8 +36,8 @@ class DashedLinePainter extends CustomPainter {
   }
 
   void drawLine(Canvas canvas, Paint paint, Offset start, Offset end) {
-    final dashLength = 10;
-    final dashSpacing = 10;
+    const dashLength = 10;
+    const dashSpacing = 10;
 
     final vector = end - start;
     final totalLength = vector.distance;

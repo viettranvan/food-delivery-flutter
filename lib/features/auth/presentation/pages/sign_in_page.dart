@@ -12,13 +12,13 @@ class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: ColoredBox(
         color: AppColors.primaryBlack,
         child: Stack(
           children: [
-            TopFanBlade(),
+            const TopFanBlade(),
             CustomPaint(
-              size: Size(200, 100), // Chiều ngang/dọc hình chữ Z
+              size: const Size(200, 100), // Chiều ngang/dọc hình chữ Z
               painter: DashedLinePainter(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height / 10 * 3,
@@ -32,7 +32,7 @@ class SignInPage extends StatelessWidget {
                   flex: 3,
                   child: Column(
                     children: [
-                      Spacer(flex: 2),
+                      const Spacer(flex: 2),
                       Text(
                         S.of(context).login,
                         style: AppTextStyle.of(
@@ -48,15 +48,15 @@ class SignInPage extends StatelessWidget {
                           color: AppColors.colourWhite,
                         ),
                       ),
-                      Spacer(flex: 1),
+                      const Spacer(),
                     ],
                   ),
                 ),
                 Expanded(
                   flex: 7,
                   child: Container(
-                    padding: EdgeInsets.all(24),
-                    decoration: BoxDecoration(
+                    padding: const EdgeInsets.all(24),
+                    decoration: const BoxDecoration(
                       color: AppColors.colourWhite,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(24),
@@ -71,30 +71,30 @@ class SignInPage extends StatelessWidget {
                             S.of(context).email.toUpperCase(),
                             style: AppTextStyle.of(size: 13),
                           ),
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
                           AppTextfield(
                             hintText: S.of(context).emailHint,
                             controller: TextEditingController(),
                           ),
-                          SizedBox(height: 24),
+                          const SizedBox(height: 24),
                           Text(
                             S.of(context).password.toUpperCase(),
                             style: AppTextStyle.of(size: 13),
                           ),
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
                           AppTextfield(
                             hintText: S.of(context).passwordHint,
                             hasSufficIcon: true,
                             controller: TextEditingController(),
                           ),
-                          SizedBox(height: 24),
+                          const SizedBox(height: 24),
                           RememberAndCheckbox(
                             onRememberMeChanged: (value) {},
                             onForgotPassword: () {
                               context.push(RouterName.forgotPassword.path);
                             },
                           ),
-                          SizedBox(height: 30),
+                          const SizedBox(height: 30),
                           InkWell(
                             onTap: () {
                               context.push(RouterName.home.path);
@@ -117,7 +117,7 @@ class SignInPage extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(height: 24),
+                          const SizedBox(height: 24),
                           Row(
                             children: [
                               Text(
@@ -127,7 +127,7 @@ class SignInPage extends StatelessWidget {
                                   color: AppColors.primaryGrey,
                                 ),
                               ),
-                              SizedBox(width: 10),
+                              const SizedBox(width: 10),
                               InkWell(
                                 onTap: () {
                                   context.push(RouterName.signUp.path);
@@ -143,7 +143,7 @@ class SignInPage extends StatelessWidget {
                               ),
                             ],
                           ),
-                          SizedBox(height: 24),
+                          const SizedBox(height: 24),
                           Center(
                             child: Text(
                               S.of(context).or,
@@ -153,8 +153,8 @@ class SignInPage extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(height: 24),
-                          SsoWidget(),
+                          const SizedBox(height: 24),
+                          const SsoWidget(),
                         ],
                       ),
                     ),

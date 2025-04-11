@@ -12,7 +12,7 @@ class BladePainter extends CustomPainter {
       ..style = PaintingStyle.fill;
 
     // Vẽ hình thang hoặc tam giác thuôn
-    Path path = Path()
+    final path = Path()
       ..moveTo(size.width / 2 - peakSize / 2, 0) // Đỉnh: rộng 10
       ..lineTo(size.width / 2 + peakSize / 2, 0)
       ..lineTo(size.width / 2 + 1, size.height) // Đáy: rộng 2

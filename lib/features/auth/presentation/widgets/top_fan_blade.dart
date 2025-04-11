@@ -14,8 +14,8 @@ class TopFanBlade extends StatelessWidget {
     return Stack(
       children: List.generate(_bladeCount, (index) {
         // Góc xoay mục tiêu: 2π / số cánh
-        double targetAngle = (math.pi / 18 * 10 * index) / _bladeCount;
-        double currentAngle = targetAngle + math.pi / 2;
+        final targetAngle = (math.pi / 18 * 10 * index) / _bladeCount;
+        final currentAngle = targetAngle + math.pi / 2;
 
         return Positioned(
           top: -150,
@@ -28,7 +28,7 @@ class TopFanBlade extends StatelessWidget {
               child: Align(
                 alignment: Alignment.topCenter,
                 child: CustomPaint(
-                  size: Size(10, 100), // chiều cao và vùng vẽ
+                  size: const Size(10, 100), // chiều cao và vùng vẽ
                   painter: BladePainter(
                     color: AppColors.primaryGrey.withValues(alpha: 0.2),
                     peakSize: 6,

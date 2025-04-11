@@ -31,7 +31,7 @@ class _SpalshPageState extends State<SpalshPage> {
     return Scaffold(
       body: Stack(
         children: [
-          Positioned(
+          const Positioned(
             top: -180,
             left: -100,
             child: SizedBox(
@@ -40,11 +40,14 @@ class _SpalshPageState extends State<SpalshPage> {
               child: TopFanShapeAnimation(),
             ),
           ),
-          Positioned(
+          const Positioned(
             bottom: -210,
             right: -210,
             child: SizedBox(
-                height: 400, width: 400, child: BottomFanShapeAnimation()),
+              height: 400,
+              width: 400,
+              child: BottomFanShapeAnimation(),
+            ),
           ),
           Center(child: SvgPicture.asset(AssetsPath.logoFood)),
         ],

@@ -79,7 +79,7 @@ class _OnboardingPageState extends State<OnboardingPage>
                       padding: const EdgeInsets.symmetric(horizontal: 24),
                       child: Column(
                         children: [
-                          SizedBox(height: 32),
+                          const SizedBox(height: 32),
                           Text(
                             data.title,
                             style: AppTextStyle.of(
@@ -88,7 +88,7 @@ class _OnboardingPageState extends State<OnboardingPage>
                             ),
                             textAlign: TextAlign.center,
                           ),
-                          SizedBox(height: 18),
+                          const SizedBox(height: 18),
                           Text(
                             data.subtitle,
                             style: AppTextStyle.of(size: 16),
@@ -106,7 +106,7 @@ class _OnboardingPageState extends State<OnboardingPage>
             flex: 3,
             child: Column(
               children: [
-                const Spacer(flex: 1),
+                const Spacer(),
                 Container(
                   width: double.infinity,
                   color: AppColors.colourWhite,
@@ -139,7 +139,8 @@ class _OnboardingPageState extends State<OnboardingPage>
                   },
                   child: Container(
                     height: 62,
-                    margin: EdgeInsets.only(bottom: 16, left: 24, right: 24),
+                    margin:
+                        const EdgeInsets.only(bottom: 16, left: 24, right: 24),
                     decoration: BoxDecoration(
                       color: AppColors.primaryColor,
                       borderRadius: BorderRadius.circular(12),
@@ -165,7 +166,7 @@ class _OnboardingPageState extends State<OnboardingPage>
                   },
                   child: Center(
                     child: Text(
-                      index == (dataSet.length - 1) ? "" : S.of(context).skip,
+                      index == (dataSet.length - 1) ? '' : S.of(context).skip,
                       style: AppTextStyle.of(
                         size: 14,
                         color: AppColors.primaryGrey,
@@ -174,9 +175,10 @@ class _OnboardingPageState extends State<OnboardingPage>
                   ),
                 ),
                 SizedBox(
-                    height: MediaQuery.of(context).padding.bottom > 14
-                        ? MediaQuery.of(context).padding.bottom
-                        : 14),
+                  height: MediaQuery.of(context).padding.bottom > 14
+                      ? MediaQuery.of(context).padding.bottom
+                      : 14,
+                ),
               ],
             ),
           ),

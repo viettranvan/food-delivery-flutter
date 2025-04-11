@@ -9,11 +9,15 @@ class AppTextfield extends StatefulWidget {
     this.hasSufficIcon = false,
     this.autoFocus = false,
     required this.controller,
+    this.keyboardType = TextInputType.text,
+    this.textInputAction,
   });
   final String? hintText;
   final bool hasSufficIcon;
   final bool autoFocus;
   final TextEditingController controller;
+  final TextInputType keyboardType;
+  final TextInputAction? textInputAction;
 
   @override
   State<AppTextfield> createState() => _AppTextfieldState();
@@ -26,8 +30,10 @@ class _AppTextfieldState extends State<AppTextfield> {
   Widget build(BuildContext context) {
     return TextField(
       autofocus: widget.autoFocus,
+      keyboardType: widget.keyboardType,
+      textInputAction: widget.textInputAction,
       obscureText: _isObscure,
-      obscuringCharacter: "*",
+      obscuringCharacter: '*',
       style: AppTextStyle.of(
         size: 14,
         letterSpacing: (widget.hasSufficIcon && _isObscure) ? 0.475 * 14 : null,
@@ -41,7 +47,7 @@ class _AppTextfieldState extends State<AppTextfield> {
         ),
         fillColor: AppColors.primaryMint,
         filled: true,
-        contentPadding: EdgeInsets.fromLTRB(20, 24, 24, 24),
+        contentPadding: const EdgeInsets.fromLTRB(20, 24, 24, 24),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide.none,
@@ -54,10 +60,10 @@ class _AppTextfieldState extends State<AppTextfield> {
                   });
                 },
                 child: Padding(
-                  padding: const EdgeInsets.all(24.0),
+                  padding: const EdgeInsets.all(24),
                   child: SvgPicture.asset(
                     _isObscure ? AssetsPath.eye : AssetsPath.eysOff,
-                    colorFilter: ColorFilter.mode(
+                    colorFilter: const ColorFilter.mode(
                       AppColors.iconGrey,
                       BlendMode.srcIn,
                     ),
