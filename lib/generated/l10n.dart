@@ -270,6 +270,16 @@ class S {
     );
   }
 
+  /// `Code`
+  String get code {
+    return Intl.message(
+      'Code',
+      name: 'code',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Send Code`
   String get sendCode {
     return Intl.message(

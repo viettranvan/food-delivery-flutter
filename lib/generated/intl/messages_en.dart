@@ -33,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "accessLocationSubtitle": m0,
         "addToCart": MessageLookupByLibrary.simpleMessage("Add to Cart"),
         "allCategories": MessageLookupByLibrary.simpleMessage("All Categories"),
+        "code": MessageLookupByLibrary.simpleMessage("Code"),
         "deliverTo": MessageLookupByLibrary.simpleMessage("Deliver to"),
         "details": MessageLookupByLibrary.simpleMessage("Details"),
         "dontHaveAnAccount":

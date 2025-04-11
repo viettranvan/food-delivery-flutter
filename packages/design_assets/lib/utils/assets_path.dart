@@ -20,6 +20,7 @@ class AssetsPath {
   static const String info = '$_basePath/icons/info.svg';
   static const String poligon1 = '$_basePath/icons/poligon1.svg';
   static const String smile = '$_basePath/icons/smile.svg';
+  static const String back = '$_basePath/icons/back.svg';
   static const String message = '$_basePath/icons/message.svg';
   static const String send = '$_basePath/icons/send.svg';
   static const String more = '$_basePath/icons/more.svg';

@@ -43,7 +43,8 @@ class _AppRouter {
       GoRoute(
         path: RouterName.verification.path,
         builder: (context, state) {
-          return VerificarionPage();
+          final email = state.extra as String;
+          return VerificarionPage(email: email);
         },
       ),
     ],

@@ -53,7 +53,7 @@ class _RememberAndCheckboxState extends State<RememberAndCheckbox> {
         SizedBox(width: 10),
         Text(
           S.of(context).rememberMe,
-          style: AppTextStyle.regular(size: 13, color: AppColors.primaryGrey),
+          style: AppTextStyle.of(size: 13, color: AppColors.primaryGrey),
         ),
         Spacer(),
         InkWell(
@@ -62,8 +62,7 @@ class _RememberAndCheckboxState extends State<RememberAndCheckbox> {
           },
           child: Text(
             S.of(context).forgotPassword,
-            style:
-                AppTextStyle.regular(size: 14, color: AppColors.primaryColor),
+            style: AppTextStyle.of(size: 14, color: AppColors.primaryColor),
           ),
         ),
       ],

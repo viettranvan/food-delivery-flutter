@@ -29,7 +29,11 @@ class SsoWidget extends StatelessWidget {
             child: Center(
                 child: Text(
               "F",
-              style: AppTextStyle.bold(size: 30, color: AppColors.colourWhite),
+              style: AppTextStyle.of(
+                size: 30,
+                color: AppColors.colourWhite,
+                weight: AppFontWeight.bold,
+              ),
             )),
           ),
         ),
@@ -46,7 +50,11 @@ class SsoWidget extends StatelessWidget {
             child: Center(
                 child: Text(
               "G",
-              style: AppTextStyle.bold(size: 30, color: AppColors.colourWhite),
+              style: AppTextStyle.of(
+                size: 30,
+                color: AppColors.colourWhite,
+                weight: AppFontWeight.bold,
+              ),
             )),
           ),
         ),
@@ -63,7 +71,11 @@ class SsoWidget extends StatelessWidget {
             child: Center(
                 child: Text(
               "A",
-              style: AppTextStyle.bold(size: 30, color: AppColors.colourWhite),
+              style: AppTextStyle.of(
+                size: 30,
+                color: AppColors.colourWhite,
+                weight: AppFontWeight.bold,
+              ),
             )),
           ),
         ),

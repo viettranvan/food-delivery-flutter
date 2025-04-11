@@ -7,10 +7,12 @@ class AppTextfield extends StatefulWidget {
     super.key,
     this.hintText,
     this.hasSufficIcon = false,
+    this.autoFocus = false,
     required this.controller,
   });
   final String? hintText;
   final bool hasSufficIcon;
+  final bool autoFocus;
   final TextEditingController controller;
 
   @override
@@ -23,15 +25,16 @@ class _AppTextfieldState extends State<AppTextfield> {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      autofocus: widget.autoFocus,
       obscureText: _isObscure,
       obscuringCharacter: "*",
-      style: AppTextStyle.regular(
+      style: AppTextStyle.of(
         size: 14,
         letterSpacing: (widget.hasSufficIcon && _isObscure) ? 0.475 * 14 : null,
       ),
       decoration: InputDecoration(
         hintText: widget.hintText,
-        hintStyle: AppTextStyle.regular(
+        hintStyle: AppTextStyle.of(
           size: 14,
           color: AppColors.secondaryGrey,
           letterSpacing: (widget.hasSufficIcon) ? 0.475 * 14 : null,

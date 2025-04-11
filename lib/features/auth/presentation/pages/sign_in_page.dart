@@ -35,14 +35,15 @@ class SignInPage extends StatelessWidget {
                       Spacer(flex: 2),
                       Text(
                         S.of(context).login,
-                        style: AppTextStyle.bold(
+                        style: AppTextStyle.of(
                           size: 30,
+                          weight: AppFontWeight.bold,
                           color: AppColors.colourWhite,
                         ),
                       ),
                       Text(
                         S.of(context).loginSubtitle,
-                        style: AppTextStyle.regular(
+                        style: AppTextStyle.of(
                           size: 16,
                           color: AppColors.colourWhite,
                         ),
@@ -68,7 +69,7 @@ class SignInPage extends StatelessWidget {
                         children: [
                           Text(
                             S.of(context).email.toUpperCase(),
-                            style: AppTextStyle.regular(size: 13),
+                            style: AppTextStyle.of(size: 13),
                           ),
                           SizedBox(height: 8),
                           AppTextfield(
@@ -78,7 +79,7 @@ class SignInPage extends StatelessWidget {
                           SizedBox(height: 24),
                           Text(
                             S.of(context).password.toUpperCase(),
-                            style: AppTextStyle.regular(size: 13),
+                            style: AppTextStyle.of(size: 13),
                           ),
                           SizedBox(height: 8),
                           AppTextfield(
@@ -107,8 +108,9 @@ class SignInPage extends StatelessWidget {
                               child: Center(
                                 child: Text(
                                   S.of(context).login.toUpperCase(),
-                                  style: AppTextStyle.bold(
+                                  style: AppTextStyle.of(
                                     size: 14,
+                                    weight: AppFontWeight.bold,
                                     color: AppColors.colourWhite,
                                   ),
                                 ),
@@ -120,7 +122,7 @@ class SignInPage extends StatelessWidget {
                             children: [
                               Text(
                                 S.of(context).dontHaveAnAccount,
-                                style: AppTextStyle.regular(
+                                style: AppTextStyle.of(
                                   size: 14,
                                   color: AppColors.primaryGrey,
                                 ),
@@ -132,7 +134,8 @@ class SignInPage extends StatelessWidget {
                                 },
                                 child: Text(
                                   S.of(context).signUp.toUpperCase(),
-                                  style: AppTextStyle.bold(
+                                  style: AppTextStyle.of(
+                                    weight: AppFontWeight.bold,
                                     size: 14,
                                     color: AppColors.primaryColor,
                                   ),
@@ -144,7 +147,7 @@ class SignInPage extends StatelessWidget {
                           Center(
                             child: Text(
                               S.of(context).or,
-                              style: AppTextStyle.regular(
+                              style: AppTextStyle.of(
                                 size: 16,
                                 color: AppColors.primaryGrey,
                               ),

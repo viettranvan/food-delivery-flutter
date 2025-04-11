@@ -82,13 +82,16 @@ class _OnboardingPageState extends State<OnboardingPage>
                           SizedBox(height: 32),
                           Text(
                             data.title,
-                            style: AppTextStyle.extraBold(size: 24),
+                            style: AppTextStyle.of(
+                              size: 24,
+                              weight: AppFontWeight.extraBold,
+                            ),
                             textAlign: TextAlign.center,
                           ),
                           SizedBox(height: 18),
                           Text(
                             data.subtitle,
-                            style: AppTextStyle.regular(size: 16),
+                            style: AppTextStyle.of(size: 16),
                             textAlign: TextAlign.center,
                           ),
                         ],
@@ -147,8 +150,9 @@ class _OnboardingPageState extends State<OnboardingPage>
                                 ? S.of(context).getStarted
                                 : S.of(context).next)
                             .toUpperCase(),
-                        style: AppTextStyle.bold(
+                        style: AppTextStyle.of(
                           size: 14,
+                          weight: AppFontWeight.bold,
                           color: AppColors.colourWhite,
                         ),
                       ),
@@ -162,7 +166,7 @@ class _OnboardingPageState extends State<OnboardingPage>
                   child: Center(
                     child: Text(
                       index == (dataSet.length - 1) ? "" : S.of(context).skip,
-                      style: AppTextStyle.regular(
+                      style: AppTextStyle.of(
                         size: 14,
                         color: AppColors.primaryGrey,
                       ),
