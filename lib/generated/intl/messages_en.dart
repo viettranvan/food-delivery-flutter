@@ -61,6 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "login": MessageLookupByLibrary.simpleMessage("Log In"),
         "loginSubtitle": MessageLookupByLibrary.simpleMessage(
             "Please sign in to your existing account"),
+        "min": MessageLookupByLibrary.simpleMessage("min"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "nameHint": MessageLookupByLibrary.simpleMessage("Jon Doe"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),

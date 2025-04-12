@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
         highlightColor: Colors.transparent,
         splashColor: Colors.transparent,
         scaffoldBackgroundColor: AppColors.colourWhite,
+
         brightness: Brightness.light,
 
         useMaterial3: true,

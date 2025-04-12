@@ -10,6 +10,7 @@ class AssetsPath {
   static const String underArrow = '$_basePath/icons/under_arrow.svg';
   static const String question = '$_basePath/icons/question.svg';
   static const String logoFood = '$_basePath/icons/logo_food.svg';
+  static const String cart = '$_basePath/icons/cart.svg';
   static const String volume = '$_basePath/icons/volume.svg';
   static const String eysOff = '$_basePath/icons/eys_off.svg';
   static const String bell = '$_basePath/icons/bell.svg';
@@ -19,12 +20,15 @@ class AssetsPath {
   static const String watch = '$_basePath/icons/watch.svg';
   static const String info = '$_basePath/icons/info.svg';
   static const String poligon1 = '$_basePath/icons/poligon1.svg';
+  static const String close = '$_basePath/icons/close.svg';
   static const String smile = '$_basePath/icons/smile.svg';
   static const String back = '$_basePath/icons/back.svg';
   static const String message = '$_basePath/icons/message.svg';
+  static const String couponBg = '$_basePath/icons/coupon_bg.svg';
   static const String send = '$_basePath/icons/send.svg';
   static const String more = '$_basePath/icons/more.svg';
   static const String star = '$_basePath/icons/star.svg';
+  static const String next = '$_basePath/icons/next.svg';
   static const String creditCard = '$_basePath/icons/credit-card.svg';
   static const String call = '$_basePath/icons/call.svg';
   static const String eye = '$_basePath/icons/eye.svg';
@@ -32,7 +36,7 @@ class AssetsPath {
   static const String micOff = '$_basePath/icons/mic-off.svg';
   static const String share = '$_basePath/icons/share.svg';
   static const String filter = '$_basePath/icons/filter.svg';
-  static const String cross = '$_basePath/icons/cross.svg';
+  static const String menu = '$_basePath/icons/menu.svg';
   static const String minus = '$_basePath/icons/minus.svg';
   static const String heart = '$_basePath/icons/heart.svg';
 

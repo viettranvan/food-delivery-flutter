@@ -30,6 +30,7 @@
     "resend": "Resend",
     "inStr": "in",
     "sec": "sec",
+    "min": "min",
     "verify": "Verify",
     "name": "Name",
     "nameHint": "Jon Doe",

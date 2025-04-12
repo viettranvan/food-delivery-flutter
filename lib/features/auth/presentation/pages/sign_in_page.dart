@@ -97,7 +97,7 @@ class SignInPage extends StatelessWidget {
                           const SizedBox(height: 30),
                           InkWell(
                             onTap: () {
-                              context.push(RouterName.home.path);
+                              context.replace(RouterName.home.path);
                             },
                             child: Container(
                               height: 62,

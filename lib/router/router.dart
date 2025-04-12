@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/features/home/presentation/pages/home_page.dart';
 import 'package:food_delivery/features/page_index.dart';
 import 'package:go_router/go_router.dart';
 
@@ -15,7 +16,7 @@ class _AppRouter {
   final GoRouter router = GoRouter(
     routes: [
       GoRoute(
-        path: RouterName.home.path,
+        path: RouterName.splash.path,
         builder: (context, state) => const SpalshPage(),
       ),
       GoRoute(
@@ -45,6 +46,12 @@ class _AppRouter {
         builder: (context, state) {
           final email = state.extra! as String;
           return VerificarionPage(email: email);
+        },
+      ),
+      GoRoute(
+        path: RouterName.home.path,
+        builder: (context, state) {
+          return const HomePage();
         },
       ),
     ],

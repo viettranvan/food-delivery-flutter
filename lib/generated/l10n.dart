@@ -340,6 +340,16 @@ class S {
     );
   }
 
+  /// `min`
+  String get min {
+    return Intl.message(
+      'min',
+      name: 'min',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Verify`
   String get verify {
     return Intl.message(

@@ -11,6 +11,7 @@ class AppTextfield extends StatefulWidget {
     required this.controller,
     this.keyboardType = TextInputType.text,
     this.textInputAction,
+    this.prefixIcon,
   });
   final String? hintText;
   final bool hasSufficIcon;
@@ -18,13 +19,19 @@ class AppTextfield extends StatefulWidget {
   final TextEditingController controller;
   final TextInputType keyboardType;
   final TextInputAction? textInputAction;
+  final Widget? prefixIcon;
 
   @override
   State<AppTextfield> createState() => _AppTextfieldState();
 }
 
 class _AppTextfieldState extends State<AppTextfield> {
-  bool _isObscure = true;
+  bool _isObscure = false;
+  @override
+  void initState() {
+    super.initState();
+    _isObscure = widget.hasSufficIcon;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +59,7 @@ class _AppTextfieldState extends State<AppTextfield> {
           borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide.none,
         ),
+        prefixIcon: widget.prefixIcon,
         suffixIcon: widget.hasSufficIcon
             ? InkWell(
                 onTap: () {
@@ -64,7 +72,7 @@ class _AppTextfieldState extends State<AppTextfield> {
                   child: SvgPicture.asset(
                     _isObscure ? AssetsPath.eye : AssetsPath.eysOff,
                     colorFilter: const ColorFilter.mode(
-                      AppColors.iconGrey,
+                      AppColors.secondaryGrey,
                       BlendMode.srcIn,
                     ),
                   ),
